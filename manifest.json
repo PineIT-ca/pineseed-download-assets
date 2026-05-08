@@ -1,0 +1,469 @@
+{
+  "version": 4,
+  "updated_at": "2026-05-08T20:18:34Z",
+  "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
+  "models": [
+    {
+      "name": "gemma3:1b",
+      "display_name": "Gemma 3 1B (Fast)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-3-1b-it-GGUF/resolve/main/gemma-3-1b-it-Q8_0.gguf",
+      "file_size_mb": 1019,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 1019
+      },
+      "replaced_by": null,
+      "description": "Fastest model. Runs on any hardware with ~1GB RAM. Good for quick summaries.",
+      "summary_llm": {
+        "gguf_file": "gemma-3-1b-it-Q8_0.gguf",
+        "template": "gemma3",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<end_of_turn>"
+          ]
+        },
+        "layer_count": 26,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "gemma3:4b",
+      "display_name": "Gemma 3 4B (Balanced)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q4_K_M.gguf",
+      "file_size_mb": 2374,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 4,
+        "disk_mb": 2374
+      },
+      "replaced_by": null,
+      "description": "Balanced model. Great quality/speed trade-off. Requires ~3.5GB RAM.",
+      "summary_llm": {
+        "gguf_file": "gemma-3-4b-it-Q4_K_M.gguf",
+        "template": "gemma3",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<end_of_turn>"
+          ]
+        },
+        "layer_count": 35,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "gemma3:12b",
+      "display_name": "Gemma 3 12B (Best)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf",
+      "file_size_mb": 6962,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 10,
+        "disk_mb": 6962
+      },
+      "replaced_by": null,
+      "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+.",
+      "summary_llm": {
+        "gguf_file": "gemma-3-12b-it-Q4_K_M.gguf",
+        "template": "gemma3",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<end_of_turn>"
+          ]
+        },
+        "layer_count": 48,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "tiny",
+      "display_name": "Whisper Tiny",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
+      "file_size_mb": 74,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 74
+      },
+      "replaced_by": null,
+      "description": "Fastest processing, good for real-time use",
+      "whisper_stt": {
+        "filename": "ggml-tiny.bin",
+        "accuracy": "Decent",
+        "speed": "Very Fast"
+      }
+    },
+    {
+      "name": "base",
+      "display_name": "Whisper Base",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
+      "file_size_mb": 142,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 142
+      },
+      "replaced_by": null,
+      "description": "Good balance of speed and accuracy",
+      "whisper_stt": {
+        "filename": "ggml-base.bin",
+        "accuracy": "Good",
+        "speed": "Fast"
+      }
+    },
+    {
+      "name": "small",
+      "display_name": "Whisper Small",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin",
+      "file_size_mb": 466,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 466
+      },
+      "replaced_by": null,
+      "description": "Better accuracy, moderate speed",
+      "whisper_stt": {
+        "filename": "ggml-small.bin",
+        "accuracy": "Good",
+        "speed": "Medium"
+      }
+    },
+    {
+      "name": "medium",
+      "display_name": "Whisper Medium",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin",
+      "file_size_mb": 1463,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 4,
+        "disk_mb": 1463
+      },
+      "replaced_by": null,
+      "description": "High accuracy for professional use",
+      "whisper_stt": {
+        "filename": "ggml-medium.bin",
+        "accuracy": "High",
+        "speed": "Slow"
+      }
+    },
+    {
+      "name": "large-v3-turbo",
+      "display_name": "Whisper Large V3 Turbo",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin",
+      "file_size_mb": 1549,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 4,
+        "disk_mb": 1549
+      },
+      "replaced_by": null,
+      "description": "Best accuracy with improved speed",
+      "whisper_stt": {
+        "filename": "ggml-large-v3-turbo.bin",
+        "accuracy": "High",
+        "speed": "Medium"
+      }
+    },
+    {
+      "name": "large-v3",
+      "display_name": "Whisper Large V3",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin",
+      "file_size_mb": 2951,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 6,
+        "disk_mb": 2951
+      },
+      "replaced_by": null,
+      "description": "Most Accurate, latest large model",
+      "whisper_stt": {
+        "filename": "ggml-large-v3.bin",
+        "accuracy": "High",
+        "speed": "Slow"
+      }
+    },
+    {
+      "name": "tiny-q5_1",
+      "display_name": "Whisper Tiny Q5_1",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny-q5_1.bin",
+      "file_size_mb": 31,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 31
+      },
+      "replaced_by": null,
+      "description": "Quantized tiny model, ~50% faster processing",
+      "whisper_stt": {
+        "filename": "ggml-tiny-q5_1.bin",
+        "accuracy": "Decent",
+        "speed": "Very Fast"
+      }
+    },
+    {
+      "name": "base-q5_1",
+      "display_name": "Whisper Base Q5_1",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base-q5_1.bin",
+      "file_size_mb": 57,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 57
+      },
+      "replaced_by": null,
+      "description": "Quantized base model, good speed/accuracy balance",
+      "whisper_stt": {
+        "filename": "ggml-base-q5_1.bin",
+        "accuracy": "Good",
+        "speed": "Fast"
+      }
+    },
+    {
+      "name": "small-q5_1",
+      "display_name": "Whisper Small Q5_1",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-q5_1.bin",
+      "file_size_mb": 181,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 181
+      },
+      "replaced_by": null,
+      "description": "Quantized small model, faster than f16 version",
+      "whisper_stt": {
+        "filename": "ggml-small-q5_1.bin",
+        "accuracy": "Good",
+        "speed": "Fast"
+      }
+    },
+    {
+      "name": "medium-q5_0",
+      "display_name": "Whisper Medium Q5_0",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium-q5_0.bin",
+      "file_size_mb": 514,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 514
+      },
+      "replaced_by": null,
+      "description": "Quantized medium model, professional quality",
+      "whisper_stt": {
+        "filename": "ggml-medium-q5_0.bin",
+        "accuracy": "High",
+        "speed": "Medium"
+      }
+    },
+    {
+      "name": "large-v3-turbo-q5_0",
+      "display_name": "Whisper Large V3 Turbo Q5_0",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin",
+      "file_size_mb": 547,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 547
+      },
+      "replaced_by": null,
+      "description": "Quantized large model, best balance",
+      "whisper_stt": {
+        "filename": "ggml-large-v3-turbo-q5_0.bin",
+        "accuracy": "High",
+        "speed": "Medium"
+      }
+    },
+    {
+      "name": "large-v3-q5_0",
+      "display_name": "Whisper Large V3 Q5_0",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin",
+      "file_size_mb": 1031,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 4,
+        "disk_mb": 1031
+      },
+      "replaced_by": null,
+      "description": "Quantized large model, high accuracy",
+      "whisper_stt": {
+        "filename": "ggml-large-v3-q5_0.bin",
+        "accuracy": "High",
+        "speed": "Slow"
+      }
+    },
+    {
+      "name": "small-tdrz",
+      "display_name": "Whisper Small Tinydiarize",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en-tdrz.bin",
+      "file_size_mb": 466,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 466
+      },
+      "replaced_by": null,
+      "description": "Small model with tinydiarize support (English only)",
+      "whisper_stt": {
+        "filename": "ggml-small.en-tdrz.bin",
+        "accuracy": "Good",
+        "speed": "Medium"
+      }
+    },
+    {
+      "name": "tiny-tdrz",
+      "display_name": "Whisper Tiny Tinydiarize",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.en-tdrz.bin",
+      "file_size_mb": 74,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 74
+      },
+      "replaced_by": null,
+      "description": "Tiny model with tinydiarize support (English only)",
+      "whisper_stt": {
+        "filename": "ggml-tiny.en-tdrz.bin",
+        "accuracy": "Decent",
+        "speed": "Very Fast"
+      }
+    },
+    {
+      "name": "parakeet-tdt-1.1b-fp32",
+      "display_name": "Parakeet TDT 1.1B (FP32)",
+      "model_type": "parakeet_stt",
+      "download_url": "https://huggingface.co/dtgagnon/parakeet-tdt-1.1b-onnx/resolve/main",
+      "file_size_mb": 4320,
+      "sha256": null,
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 5,
+        "disk_mb": 4320
+      },
+      "replaced_by": null,
+      "description": "Higher accuracy English STT (1.1B params). ~6.7% WER, >2000x realtime. FP32 — INT8 quantized version pending.",
+      "parakeet_stt": {
+        "files": [
+          "encoder-model.onnx",
+          "encoder-model.onnx.data",
+          "decoder_joint-model.onnx",
+          "decoder_joint-model.onnx.data",
+          "vocab.txt"
+        ],
+        "quantization_type": "fp32"
+      }
+    },
+    {
+      "name": "parakeet-tdt-0.6b-v3-int8",
+      "display_name": "Parakeet TDT 0.6B v3 (Int8)",
+      "model_type": "parakeet_stt",
+      "download_url": "https://huggingface.co/istupakov/parakeet-tdt-0.6b-v3-onnx/resolve/main",
+      "file_size_mb": 670,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 670
+      },
+      "replaced_by": "parakeet-tdt-1.1b-fp32",
+      "description": "Ultra Fast (v3) — Real time on M4 Max, latest version with int8 quantization",
+      "parakeet_stt": {
+        "files": [
+          "encoder-model.int8.onnx",
+          "decoder_joint-model.int8.onnx",
+          "nemo128.onnx",
+          "vocab.txt"
+        ],
+        "quantization_type": "int8"
+      }
+    },
+    {
+      "name": "parakeet-tdt-0.6b-v2-int8",
+      "display_name": "Parakeet TDT 0.6B v2 (Int8)",
+      "model_type": "parakeet_stt",
+      "download_url": "https://huggingface.co/istupakov/parakeet-tdt-0.6b-v2-onnx/resolve/main",
+      "file_size_mb": 661,
+      "sha256": null,
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 2,
+        "disk_mb": 661
+      },
+      "replaced_by": null,
+      "description": "Fast (v2) — Previous version with int8 quantization, good balance of speed and accuracy",
+      "parakeet_stt": {
+        "files": [
+          "encoder-model.int8.onnx",
+          "decoder_joint-model.int8.onnx",
+          "nemo128.onnx",
+          "vocab.txt"
+        ],
+        "quantization_type": "int8"
+      }
+    }
+  ],
+  "ffmpeg": {
+    "windows_x86_64": {
+      "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+      "sha256": null
+    },
+    "macos_aarch64": {
+      "url": "https://ffmpeg.martin-riedl.de/redirect/latest/macos/arm64/release/ffmpeg.zip",
+      "sha256": null
+    },
+    "macos_x86_64": {
+      "url": "https://ffmpeg.martin-riedl.de/redirect/latest/macos/amd64/release/ffmpeg.zip",
+      "sha256": null
+    },
+    "linux_aarch64": {
+      "url": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz",
+      "sha256": null
+    },
+    "linux_x86_64": {
+      "url": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz",
+      "sha256": null
+    }
+  }
+}
