@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updated_at": "2026-05-08T20:18:34Z",
+  "version": 8,
+  "updated_at": "2026-08-19T19:10:54Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
   "models": [
     {
@@ -87,6 +87,66 @@
           ]
         },
         "layer_count": 48,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "qwen3.5:9b",
+      "display_name": "Qwen 3.5 9B (High Quality)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/Qwen3.5-9B-GGUF/resolve/main/Qwen3.5-9B-Q4_K_M.gguf",
+      "file_size_mb": 5367,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 7,
+        "disk_mb": 5367
+      },
+      "replaced_by": null,
+      "description": "Newer-generation model (Mar 2026). Matches or beats Gemma 3 12B quality at roughly half the RAM. Requires ~7GB RAM.",
+      "min_app_version": "0.33.0",
+      "summary_llm": {
+        "gguf_file": "Qwen3.5-9B-Q4_K_M.gguf",
+        "template": "chatml-nothink",
+        "sampling": {
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8,
+          "stop_tokens": [
+            "<|im_end|>"
+          ]
+        },
+        "layer_count": 32,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "qwen3.8:27b",
+      "display_name": "Qwen 3.8 27B (Max Quality)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/Qwen3.8-27B-GGUF/resolve/main/Qwen3.8-27B-Q4_K_M.gguf",
+      "file_size_mb": 16033,
+      "sha256": null,
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 20,
+        "disk_mb": 16033
+      },
+      "replaced_by": null,
+      "description": "Best local summaries available (Aug 2026). Requires ~20GB RAM; recommended for M-series Macs with 32GB+.",
+      "min_app_version": "0.33.0",
+      "summary_llm": {
+        "gguf_file": "Qwen3.8-27B-Q4_K_M.gguf",
+        "template": "chatml-nothink",
+        "sampling": {
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8,
+          "stop_tokens": [
+            "<|im_end|>"
+          ]
+        },
+        "layer_count": 64,
         "context_size": 32768
       }
     },
@@ -382,8 +442,8 @@
         "ram_gb": 5,
         "disk_mb": 4320
       },
-      "replaced_by": null,
-      "description": "Higher accuracy English STT (1.1B params). ~6.7% WER, >2000x realtime. FP32 — INT8 quantized version pending.",
+      "replaced_by": "parakeet-tdt-0.6b-v3-int8",
+      "description": "Higher accuracy English STT (1.1B params). Disabled until the runtime supports this FP32 export format.",
       "parakeet_stt": {
         "files": [
           "encoder-model.onnx",
@@ -407,7 +467,7 @@
         "ram_gb": 2,
         "disk_mb": 670
       },
-      "replaced_by": "parakeet-tdt-1.1b-fp32",
+      "replaced_by": null,
       "description": "Ultra Fast (v3) — Real time on M4 Max, latest version with int8 quantization",
       "parakeet_stt": {
         "files": [
@@ -444,6 +504,40 @@
       }
     }
   ],
+  "cloud_models": {
+    "openai": [
+      "gpt-5.2",
+      "gpt-5.1",
+      "gpt-5",
+      "gpt-5-mini",
+      "gpt-5-nano",
+      "gpt-4.1",
+      "gpt-4.1-mini",
+      "gpt-4.1-nano",
+      "o3",
+      "o4-mini",
+      "gpt-4o",
+      "gpt-4o-mini"
+    ],
+    "claude": [
+      "claude-sonnet-5",
+      "claude-opus-5",
+      "claude-opus-4-8",
+      "claude-sonnet-4-6",
+      "claude-haiku-4-5"
+    ],
+    "groq": [
+      "llama-3.3-70b-versatile",
+      "llama-3.1-8b-instant",
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "groq/compound",
+      "groq/compound-mini",
+      "meta-llama/llama-4-scout-17b-16e-instruct",
+      "qwen/qwen3-32b",
+      "qwen/qwen3.6-27b"
+    ]
+  },
   "ffmpeg": {
     "windows_x86_64": {
       "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
@@ -464,6 +558,23 @@
     "linux_x86_64": {
       "url": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz",
       "sha256": null
+    }
+  },
+  "tier_packages": {
+    "fast": {
+      "summary_llm": "gemma3:1b",
+      "whisper_stt": "base-q5_1",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
+    },
+    "balanced": {
+      "summary_llm": "gemma3:4b",
+      "whisper_stt": "small-q5_1",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
+    },
+    "premium": {
+      "summary_llm": "gemma3:12b",
+      "whisper_stt": "large-v3-turbo-q5_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     }
   }
 }
