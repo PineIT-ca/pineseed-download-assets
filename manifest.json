@@ -1,11 +1,11 @@
 {
-  "version": 8,
-  "updated_at": "2026-08-19T19:10:54Z",
+  "version": 9,
+  "updated_at": "2026-10-01T15:48:23Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
   "models": [
     {
       "name": "gemma3:1b",
-      "display_name": "Gemma 3 1B (Fast)",
+      "display_name": "Gemma 3 1B (Legacy)",
       "model_type": "summary_llm",
       "download_url": "https://huggingface.co/lmstudio-community/gemma-3-1b-it-GGUF/resolve/main/gemma-3-1b-it-Q8_0.gguf",
       "file_size_mb": 1019,
@@ -16,7 +16,7 @@
         "disk_mb": 1019
       },
       "replaced_by": null,
-      "description": "Fastest model. Runs on any hardware with ~1GB RAM. Good for quick summaries.",
+      "description": "Fastest model. Runs on any hardware with ~1GB RAM. Good for quick summaries. Legacy model kept for existing installs. New setups use Qwen 3.5 2B.",
       "summary_llm": {
         "gguf_file": "gemma-3-1b-it-Q8_0.gguf",
         "template": "gemma3",
@@ -34,7 +34,7 @@
     },
     {
       "name": "gemma3:4b",
-      "display_name": "Gemma 3 4B (Balanced)",
+      "display_name": "Gemma 3 4B (Legacy)",
       "model_type": "summary_llm",
       "download_url": "https://huggingface.co/lmstudio-community/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q4_K_M.gguf",
       "file_size_mb": 2374,
@@ -45,7 +45,7 @@
         "disk_mb": 2374
       },
       "replaced_by": null,
-      "description": "Balanced model. Great quality/speed trade-off. Requires ~3.5GB RAM.",
+      "description": "Balanced model. Great quality/speed trade-off. Requires ~3.5GB RAM. Legacy model kept for existing installs. New setups use Qwen 3.5 4B.",
       "summary_llm": {
         "gguf_file": "gemma-3-4b-it-Q4_K_M.gguf",
         "template": "gemma3",
@@ -63,7 +63,7 @@
     },
     {
       "name": "gemma3:12b",
-      "display_name": "Gemma 3 12B (Best)",
+      "display_name": "Gemma 3 12B (Legacy)",
       "model_type": "summary_llm",
       "download_url": "https://huggingface.co/lmstudio-community/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf",
       "file_size_mb": 6962,
@@ -74,7 +74,7 @@
         "disk_mb": 6962
       },
       "replaced_by": null,
-      "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+.",
+      "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+. Legacy model kept for existing installs. New setups use Gemma 4 12B.",
       "summary_llm": {
         "gguf_file": "gemma-3-12b-it-Q4_K_M.gguf",
         "template": "gemma3",
@@ -96,7 +96,7 @@
       "model_type": "summary_llm",
       "download_url": "https://huggingface.co/lmstudio-community/Qwen3.5-9B-GGUF/resolve/main/Qwen3.5-9B-Q4_K_M.gguf",
       "file_size_mb": 5367,
-      "sha256": null,
+      "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
       "quality_tier": "premium",
       "hardware_requirements": {
         "ram_gb": 7,
@@ -126,7 +126,7 @@
       "model_type": "summary_llm",
       "download_url": "https://huggingface.co/lmstudio-community/Qwen3.8-27B-GGUF/resolve/main/Qwen3.8-27B-Q4_K_M.gguf",
       "file_size_mb": 16033,
-      "sha256": null,
+      "sha256": "e00082f779fa385cee8c68a3ec8833a75778cc87272240b942f74e0b8243e520",
       "quality_tier": "premium",
       "hardware_requirements": {
         "ram_gb": 20,
@@ -147,6 +147,186 @@
           ]
         },
         "layer_count": 64,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "gemma4:12b",
+      "display_name": "Gemma 4 12B",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-4-12B-it-GGUF/resolve/main/gemma-4-12B-it-Q4_K_M.gguf",
+      "file_size_mb": 7039,
+      "sha256": "95d83ba36642b1f385fb906b5962a71763361be3bac930a709945f72d97473f8",
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 10,
+        "disk_mb": 7039
+      },
+      "replaced_by": null,
+      "description": "Strong long-meeting summaries with about 10 GB RAM.",
+      "min_app_version": "0.34.0",
+      "summary_llm": {
+        "gguf_file": "gemma-4-12B-it-Q4_K_M.gguf",
+        "template": "gemma4",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<turn|>"
+          ]
+        },
+        "layer_count": 48,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "qwen3.5:2b",
+      "display_name": "Qwen 3.5 2B (Fast)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/Qwen3.5-2B-GGUF/resolve/main/Qwen3.5-2B-Q4_K_M.gguf",
+      "file_size_mb": 1212,
+      "sha256": "0bfe35afc9f05b7fac3fa04925e051ac7939a42a8a17ea11afc99701bea826cc",
+      "quality_tier": "fast",
+      "hardware_requirements": {
+        "ram_gb": 3,
+        "disk_mb": 1212
+      },
+      "replaced_by": null,
+      "description": "Lightweight summaries with about 3 GB RAM.",
+      "min_app_version": "0.33.0",
+      "summary_llm": {
+        "gguf_file": "Qwen3.5-2B-Q4_K_M.gguf",
+        "template": "chatml-nothink",
+        "sampling": {
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8,
+          "stop_tokens": [
+            "<|im_end|>"
+          ]
+        },
+        "layer_count": 24,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "qwen3.5:4b",
+      "display_name": "Qwen 3.5 4B (Balanced)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/Qwen3.5-4B-GGUF/resolve/main/Qwen3.5-4B-Q4_K_M.gguf",
+      "file_size_mb": 2582,
+      "sha256": "25082a7dd3776cc3c741c6347d3bd04523f05796607b3fbc32fa3a25dfa1418c",
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 5,
+        "disk_mb": 2582
+      },
+      "replaced_by": null,
+      "description": "Balanced long-meeting summaries with about 5 GB RAM.",
+      "min_app_version": "0.33.0",
+      "summary_llm": {
+        "gguf_file": "Qwen3.5-4B-Q4_K_M.gguf",
+        "template": "chatml-nothink",
+        "sampling": {
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8,
+          "stop_tokens": [
+            "<|im_end|>"
+          ]
+        },
+        "layer_count": 32,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "qwen3.5:27b",
+      "display_name": "Qwen 3.5 27B (Best)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/Qwen3.5-27B-GGUF/resolve/main/Qwen3.5-27B-Q4_K_M.gguf",
+      "file_size_mb": 15774,
+      "sha256": "730aa508f1e48bb680917c16069176e07df86a29dc0c6602fc252c8f93062da9",
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 20,
+        "disk_mb": 15774
+      },
+      "replaced_by": null,
+      "description": "High-quality long-meeting summaries with about 20 GB RAM.",
+      "min_app_version": "0.33.0",
+      "summary_llm": {
+        "gguf_file": "Qwen3.5-27B-Q4_K_M.gguf",
+        "template": "chatml-nothink",
+        "sampling": {
+          "temperature": 0.7,
+          "top_k": 20,
+          "top_p": 0.8,
+          "stop_tokens": [
+            "<|im_end|>"
+          ]
+        },
+        "layer_count": 64,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "gemma4:e4b",
+      "display_name": "Gemma 4 E4B",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-4-E4B-it-GGUF/resolve/main/gemma-4-E4B-it-Q4_K_M.gguf",
+      "file_size_mb": 5088,
+      "sha256": "0ffb122c8b6921f13cbc34186e052524d0b5803b17f4867b7197a561400b3770",
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 7,
+        "disk_mb": 5088
+      },
+      "replaced_by": null,
+      "description": "Efficient summaries with about 7 GB RAM and 5 GB of weights including per-layer embeddings.",
+      "min_app_version": "0.34.0",
+      "summary_llm": {
+        "gguf_file": "gemma-4-E4B-it-Q4_K_M.gguf",
+        "template": "gemma4",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<turn|>"
+          ]
+        },
+        "layer_count": 42,
+        "context_size": 32768
+      }
+    },
+    {
+      "name": "gemma4:26b-a4b",
+      "display_name": "Gemma 4 26B A4B (MoE)",
+      "model_type": "summary_llm",
+      "download_url": "https://huggingface.co/lmstudio-community/gemma-4-26B-A4B-it-GGUF/resolve/main/gemma-4-26B-A4B-it-Q4_K_M.gguf",
+      "file_size_mb": 16018,
+      "sha256": "e19514d9541344001cb7c8eaf88704b8bf2e5d8f4e9aac12402eed360cffdfc4",
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 20,
+        "disk_mb": 16018
+      },
+      "replaced_by": null,
+      "description": "Fast mixture-of-experts summaries with about 20 GB RAM.",
+      "min_app_version": "0.34.0",
+      "summary_llm": {
+        "gguf_file": "gemma-4-26B-A4B-it-Q4_K_M.gguf",
+        "template": "gemma4",
+        "sampling": {
+          "temperature": 1.0,
+          "top_k": 64,
+          "top_p": 0.95,
+          "stop_tokens": [
+            "<turn|>"
+          ]
+        },
+        "layer_count": 30,
         "context_size": 32768
       }
     },
@@ -236,7 +416,7 @@
       "model_type": "whisper_stt",
       "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin",
       "file_size_mb": 1549,
-      "sha256": null,
+      "sha256": "1fc70f774d38eb169993ac391eea357ef47c88757ef72ee5943879b7e8e2bc69",
       "quality_tier": "premium",
       "hardware_requirements": {
         "ram_gb": 4,
@@ -256,7 +436,7 @@
       "model_type": "whisper_stt",
       "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin",
       "file_size_mb": 2951,
-      "sha256": null,
+      "sha256": "64d182b440b98d5203c4f9bd541544d84c605196c4f7b845dfa11fb23594d1e2",
       "quality_tier": "premium",
       "hardware_requirements": {
         "ram_gb": 6,
@@ -356,7 +536,7 @@
       "model_type": "whisper_stt",
       "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin",
       "file_size_mb": 547,
-      "sha256": null,
+      "sha256": "394221709cd5ad1f40c46e6031ca61bce88931e6e088c188294c6d5a55ffa7e2",
       "quality_tier": "balanced",
       "hardware_requirements": {
         "ram_gb": 2,
@@ -376,7 +556,7 @@
       "model_type": "whisper_stt",
       "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin",
       "file_size_mb": 1031,
-      "sha256": null,
+      "sha256": "d75795ecff3f83b5faa89d1900604ad8c780abd5739fae406de19f23ecd98ad1",
       "quality_tier": "premium",
       "hardware_requirements": {
         "ram_gb": 4,
@@ -428,6 +608,27 @@
         "filename": "ggml-tiny.en-tdrz.bin",
         "accuracy": "Decent",
         "speed": "Very Fast"
+      }
+    },
+    {
+      "name": "large-v3-turbo-q8_0",
+      "display_name": "Whisper Large V3 Turbo Q8_0",
+      "model_type": "whisper_stt",
+      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q8_0.bin",
+      "file_size_mb": 834,
+      "sha256": "317eb69c11673c9de1e1f0d459b253999804ec71ac4c23c17ecf5fbe24e259a1",
+      "quality_tier": "premium",
+      "hardware_requirements": {
+        "ram_gb": 3,
+        "disk_mb": 834
+      },
+      "replaced_by": null,
+      "description": "8-bit quantized turbo model, near full-precision accuracy",
+      "min_app_version": "0.34.0",
+      "whisper_stt": {
+        "filename": "ggml-large-v3-turbo-q8_0.bin",
+        "accuracy": "High",
+        "speed": "Medium"
       }
     },
     {
@@ -506,6 +707,9 @@
   ],
   "cloud_models": {
     "openai": [
+      "gpt-6.1-sol",
+      "gpt-6-luna",
+      "gpt-6-astra",
       "gpt-5.2",
       "gpt-5.1",
       "gpt-5",
@@ -520,44 +724,49 @@
       "gpt-4o-mini"
     ],
     "claude": [
+      "claude-sonnet-5-5",
       "claude-sonnet-5",
       "claude-opus-5",
       "claude-opus-4-8",
+      "claude-opus-4-7",
+      "claude-opus-4-6",
       "claude-sonnet-4-6",
       "claude-haiku-4-5"
     ],
     "groq": [
+      "openai/gpt-oss-120b",
       "llama-3.3-70b-versatile",
       "llama-3.1-8b-instant",
-      "openai/gpt-oss-120b",
       "openai/gpt-oss-20b",
-      "groq/compound",
-      "groq/compound-mini",
-      "meta-llama/llama-4-scout-17b-16e-instruct",
-      "qwen/qwen3-32b",
-      "qwen/qwen3.6-27b"
+      "qwen/qwen3.8-27b",
+      "minimaxai/minimax-m2.7"
     ]
   },
   "ffmpeg": {
     "windows_x86_64": {
-      "url": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
-      "sha256": null
+      "url": "https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-9.0.1-essentials_build.zip",
+      "sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
+      "binary_sha256": "72a489eccd008c2ec2c0a5856c5c75bc3d8bbfa90166c4566865c246445e6aa3"
     },
     "macos_aarch64": {
-      "url": "https://ffmpeg.martin-riedl.de/redirect/latest/macos/arm64/release/ffmpeg.zip",
-      "sha256": null
+      "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1787073674_9.0.1/ffmpeg.zip",
+      "sha256": "8287a1b2229e05eb41859f073e18e6c52c60a778f2f5e6881070fe51b79407fe",
+      "binary_sha256": "393e4c395020a1cb7cbd77fbe00599ce69d1c6466fee0dbd59d13f86a81a1611"
     },
     "macos_x86_64": {
-      "url": "https://ffmpeg.martin-riedl.de/redirect/latest/macos/amd64/release/ffmpeg.zip",
-      "sha256": null
+      "url": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1787081194_9.0.1/ffmpeg.zip",
+      "sha256": "5bdead62ff504ab9b447cc72b212c4fb481e3f7de5877d427a51bee8136dda40",
+      "binary_sha256": "56f4a0478fff60fa549ab7aa03759d7ab116dadcdf63dba4d466ebfba1280b2f"
     },
     "linux_aarch64": {
-      "url": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-arm64-static.tar.xz",
-      "sha256": null
+      "url": "https://ffmpeg.martin-riedl.de/download/linux/arm64/1787072884_9.0.1/ffmpeg.zip",
+      "sha256": "92cff3dec20d996bb5b8a918b156b64301338e7c28046053c82d0935cf7c6eb2",
+      "binary_sha256": "1dcfb51ea2cbed7fee6c8ff730ea46808baffd3ac587060896b93d2e37c88fee"
     },
     "linux_x86_64": {
-      "url": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz",
-      "sha256": null
+      "url": "https://ffmpeg.martin-riedl.de/download/linux/amd64/1787074600_9.0.1/ffmpeg.zip",
+      "sha256": "18bec7d5c2ab3b24d277466b758394e109b0479133b98d155c5540ed3013fa74",
+      "binary_sha256": "45e34db9aab2951db628c1ab069116f3c412e6a987b7f3d7ce00d8366157711a"
     }
   },
   "tier_packages": {
@@ -568,7 +777,7 @@
     },
     "balanced": {
       "summary_llm": "gemma3:4b",
-      "whisper_stt": "small-q5_1",
+      "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     },
     "premium": {
@@ -576,5 +785,614 @@
       "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     }
-  }
+  },
+  "vocabulary_packs": [
+    {
+      "id": "legal",
+      "name": "Legal",
+      "description": "Contracts, litigation, and corporate legal terminology.",
+      "terms": [
+        "indemnify",
+        "indemnification",
+        "force majeure",
+        "arbitration",
+        "jurisdiction",
+        "plaintiff",
+        "defendant",
+        "litigation",
+        "deposition",
+        "subpoena",
+        "tort",
+        "breach of contract",
+        "liability",
+        "injunction",
+        "statute of limitations",
+        "due diligence",
+        "non-disclosure agreement",
+        "power of attorney",
+        "fiduciary duty",
+        "escrow",
+        "covenant",
+        "warranty",
+        "severability",
+        "governing law",
+        "venue",
+        "counsel",
+        "retainer",
+        "precedent",
+        "affidavit",
+        "discovery",
+        "settlement",
+        "class action",
+        "intellectual property",
+        "patent infringement",
+        "trademark",
+        "copyright",
+        "licensing agreement",
+        "indemnitee",
+        "arbitral tribunal",
+        "choice of law"
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance & Banking",
+      "description": "Corporate finance, capital markets, and accounting terminology.",
+      "terms": [
+        "amortization",
+        "EBITDA",
+        "liquidity",
+        "equity",
+        "derivatives",
+        "hedge",
+        "collateral",
+        "underwriting",
+        "securitization",
+        "capital expenditure",
+        "capex",
+        "depreciation",
+        "working capital",
+        "accrual",
+        "GAAP",
+        "IFRS",
+        "mezzanine financing",
+        "leveraged buyout",
+        "LBO",
+        "due diligence",
+        "valuation",
+        "discounted cash flow",
+        "DCF",
+        "arbitrage",
+        "basis points",
+        "yield curve",
+        "credit default swap",
+        "tranche",
+        "covenant",
+        "syndicated loan",
+        "private equity",
+        "venture capital",
+        "term sheet",
+        "cap table",
+        "dilution",
+        "custodian",
+        "clearinghouse",
+        "margin call",
+        "counterparty risk"
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "Medical & Clinical",
+      "description": "Clinical care, diagnostics, and hospital terminology.",
+      "terms": [
+        "differential diagnosis",
+        "comorbidity",
+        "prognosis",
+        "etiology",
+        "contraindication",
+        "prophylaxis",
+        "palliative care",
+        "triage",
+        "sepsis",
+        "hemorrhage",
+        "anesthesia",
+        "biopsy",
+        "chemotherapy",
+        "radiotherapy",
+        "pathology",
+        "histology",
+        "electrocardiogram",
+        "informed consent",
+        "discharge summary",
+        "intensive care unit",
+        "outpatient",
+        "inpatient",
+        "tachycardia",
+        "bradycardia",
+        "hypertension",
+        "hypotension",
+        "dosage",
+        "anaphylaxis",
+        "intubation",
+        "resuscitation",
+        "oncology",
+        "cardiology",
+        "nephrology",
+        "endocrinology",
+        "immunosuppressant",
+        "telemedicine",
+        "auscultation",
+        "edema",
+        "postoperative"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software & Engineering",
+      "description": "Software development, cloud infrastructure, and engineering process terms.",
+      "terms": [
+        "microservices",
+        "latency",
+        "throughput",
+        "kubernetes",
+        "container orchestration",
+        "continuous integration",
+        "continuous deployment",
+        "technical debt",
+        "refactor",
+        "race condition",
+        "deadlock",
+        "idempotent",
+        "sprint",
+        "backlog",
+        "regression testing",
+        "unit test",
+        "load balancer",
+        "sharding",
+        "caching layer",
+        "observability",
+        "telemetry",
+        "rollback",
+        "feature flag",
+        "monorepo",
+        "dependency injection",
+        "garbage collection",
+        "memory leak",
+        "deprecation",
+        "backward compatibility",
+        "rate limiting",
+        "webhook",
+        "OAuth",
+        "JWT",
+        "encryption at rest",
+        "zero-downtime deployment",
+        "canary release",
+        "staging environment",
+        "production incident",
+        "postmortem"
+      ]
+    },
+    {
+      "id": "consulting",
+      "name": "Consulting",
+      "description": "Management consulting engagements, delivery, and client terminology.",
+      "terms": [
+        "deliverable",
+        "engagement",
+        "stakeholder alignment",
+        "value proposition",
+        "gap analysis",
+        "change management",
+        "RACI matrix",
+        "SWOT analysis",
+        "benchmarking",
+        "operating model",
+        "org design",
+        "transformation roadmap",
+        "workstream",
+        "scope creep",
+        "statement of work",
+        "billable hours",
+        "utilization rate",
+        "client onboarding",
+        "playbook",
+        "steering committee",
+        "key performance indicator",
+        "best practice",
+        "quick win",
+        "capability maturity",
+        "target operating model",
+        "business case",
+        "return on investment",
+        "cost-benefit analysis",
+        "executive summary",
+        "discovery phase",
+        "implementation plan",
+        "governance framework",
+        "risk register",
+        "change fatigue",
+        "sponsor",
+        "workshop facilitation"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales & CRM",
+      "description": "Sales pipeline, revenue operations, and account management terminology.",
+      "terms": [
+        "pipeline",
+        "quota",
+        "marketing qualified lead",
+        "sales qualified lead",
+        "churn rate",
+        "upsell",
+        "cross-sell",
+        "close rate",
+        "discovery call",
+        "objection handling",
+        "decision maker",
+        "procurement",
+        "request for proposal",
+        "contract renewal",
+        "annual recurring revenue",
+        "monthly recurring revenue",
+        "net retention",
+        "customer acquisition cost",
+        "lifetime value",
+        "cold outreach",
+        "warm lead",
+        "gatekeeper",
+        "champion",
+        "buying committee",
+        "negotiation leverage",
+        "term sheet",
+        "discount tier",
+        "commission structure",
+        "sales cycle",
+        "forecast accuracy",
+        "territory planning",
+        "account-based marketing",
+        "renewal risk",
+        "deal desk",
+        "win rate"
+      ]
+    },
+    {
+      "id": "pharma",
+      "name": "Pharma & Life Sciences",
+      "description": "Drug development, clinical trials, and regulatory affairs terminology.",
+      "terms": [
+        "pharmacokinetics",
+        "pharmacodynamics",
+        "bioavailability",
+        "clinical trial",
+        "placebo",
+        "double-blind study",
+        "investigational new drug",
+        "FDA approval",
+        "phase III trial",
+        "adverse event",
+        "contraindication",
+        "formulation",
+        "excipient",
+        "active pharmaceutical ingredient",
+        "good manufacturing practice",
+        "efficacy endpoint",
+        "dosing regimen",
+        "half-life",
+        "titration",
+        "off-label use",
+        "orphan drug",
+        "biologics",
+        "monoclonal antibody",
+        "generic equivalent",
+        "patent cliff",
+        "regulatory submission",
+        "pharmacovigilance",
+        "informed consent",
+        "protocol amendment",
+        "contract research organization",
+        "blinding",
+        "randomization",
+        "endpoint",
+        "safety profile",
+        "drug interaction"
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "Construction & Trades",
+      "description": "Construction project delivery, site work, and contracting terminology.",
+      "terms": [
+        "change order",
+        "punch list",
+        "load-bearing",
+        "request for information",
+        "subcontractor",
+        "general contractor",
+        "permit",
+        "zoning variance",
+        "site plan",
+        "footing",
+        "rebar",
+        "curing time",
+        "mechanical lien",
+        "retainage",
+        "bid bond",
+        "performance bond",
+        "critical path",
+        "mobilization",
+        "demobilization",
+        "OSHA compliance",
+        "code violation",
+        "structural integrity",
+        "foundation",
+        "framing",
+        "insulation",
+        "drywall",
+        "punch-out",
+        "as-built drawings",
+        "submittal",
+        "schedule of values",
+        "progress payment",
+        "warranty period",
+        "liquidated damages",
+        "safety walkthrough",
+        "easement",
+        "site survey"
+      ]
+    },
+    {
+      "id": "realestate",
+      "name": "Real Estate",
+      "description": "Residential and commercial real estate transaction terminology.",
+      "terms": [
+        "escrow",
+        "contingency",
+        "closing costs",
+        "earnest money",
+        "title insurance",
+        "appraisal",
+        "comparative market analysis",
+        "listing agreement",
+        "buyer's agent",
+        "seller's agent",
+        "dual agency",
+        "homeowners association",
+        "capitalization rate",
+        "cash-on-cash return",
+        "net operating income",
+        "due diligence period",
+        "inspection contingency",
+        "financing contingency",
+        "lease term",
+        "tenant improvement allowance",
+        "triple net lease",
+        "zoning",
+        "easement",
+        "deed of trust",
+        "mortgage refinance",
+        "amortization schedule",
+        "comparables",
+        "absorption rate",
+        "occupancy rate",
+        "tenant vacancy",
+        "property management",
+        "leaseback",
+        "1031 exchange"
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "description": "K-12 and higher-education administration and pedagogy terminology.",
+      "terms": [
+        "curriculum",
+        "pedagogy",
+        "formative assessment",
+        "summative assessment",
+        "individualized education plan",
+        "differentiated instruction",
+        "learning objectives",
+        "rubric",
+        "accreditation",
+        "standardized testing",
+        "cohort",
+        "matriculation",
+        "tenure track",
+        "syllabus",
+        "learning management system",
+        "competency-based learning",
+        "scaffolding",
+        "remediation",
+        "retention rate",
+        "enrollment",
+        "professional development",
+        "blended learning",
+        "asynchronous learning",
+        "capstone project",
+        "prerequisite",
+        "transcript",
+        "credit hour",
+        "provost",
+        "dean",
+        "department chair",
+        "academic probation",
+        "articulation agreement",
+        "dual enrollment",
+        "gifted program"
+      ]
+    },
+    {
+      "id": "government",
+      "name": "Government & Public Sector",
+      "description": "Public administration, procurement, and legislative terminology.",
+      "terms": [
+        "appropriations",
+        "procurement",
+        "request for proposal",
+        "compliance audit",
+        "statutory requirement",
+        "regulatory framework",
+        "rulemaking",
+        "public comment period",
+        "interagency coordination",
+        "continuity of operations",
+        "freedom of information act",
+        "oversight committee",
+        "fiscal year",
+        "budget reconciliation",
+        "grant funding",
+        "cooperative agreement",
+        "memorandum of understanding",
+        "sunset clause",
+        "enabling legislation",
+        "executive order",
+        "civil service",
+        "security clearance",
+        "classified briefing",
+        "whole-of-government",
+        "stakeholder consultation",
+        "legislative session",
+        "constituent services",
+        "public hearing",
+        "zoning ordinance",
+        "municipal code",
+        "ordinance",
+        "sequestration",
+        "unfunded mandate",
+        "intergovernmental transfer"
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing & Logistics",
+      "description": "Production, supply chain, and quality-control terminology.",
+      "terms": [
+        "throughput",
+        "takt time",
+        "lean manufacturing",
+        "kaizen",
+        "six sigma",
+        "kanban",
+        "work-in-progress",
+        "bill of materials",
+        "tolerance stack-up",
+        "quality control",
+        "statistical process control",
+        "root cause analysis",
+        "defect rate",
+        "yield rate",
+        "cycle time",
+        "changeover time",
+        "preventive maintenance",
+        "predictive maintenance",
+        "supply chain disruption",
+        "just-in-time",
+        "inventory turnover",
+        "first-pass yield",
+        "scrap rate",
+        "non-conformance report",
+        "corrective action",
+        "production line",
+        "assembly line",
+        "programmable logic controller",
+        "batch processing",
+        "traceability",
+        "vendor qualification"
+      ]
+    }
+  ],
+  "hardware_packages": [
+    {
+      "id": "metal-8",
+      "gpu": "metal",
+      "min_ram_gb": 8,
+      "summary_llm": "qwen3.5:4b",
+      "whisper_stt": "large-v3-turbo-q5_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "parakeet",
+      "batch_whisper_stt": "large-v3-turbo-q5_0"
+    },
+    {
+      "id": "metal-16",
+      "gpu": "metal",
+      "min_ram_gb": 16,
+      "summary_llm": "gemma4:12b",
+      "whisper_stt": "large-v3-turbo-q5_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3-turbo-q8_0"
+    },
+    {
+      "id": "metal-24",
+      "gpu": "metal",
+      "min_ram_gb": 24,
+      "summary_llm": "qwen3.5:27b",
+      "whisper_stt": "large-v3-turbo-q8_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3-q5_0"
+    },
+    {
+      "id": "metal-48",
+      "gpu": "metal",
+      "min_ram_gb": 48,
+      "summary_llm": "qwen3.8:27b",
+      "whisper_stt": "large-v3-turbo",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3"
+    },
+    {
+      "id": "cpu-8",
+      "gpu": "none",
+      "min_ram_gb": 8,
+      "summary_llm": "qwen3.5:2b",
+      "whisper_stt": "small-q5_1",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "parakeet",
+      "batch_whisper_stt": "large-v3-turbo-q5_0"
+    },
+    {
+      "id": "cpu-16",
+      "gpu": "none",
+      "min_ram_gb": 16,
+      "summary_llm": "qwen3.5:4b",
+      "whisper_stt": "small-q5_1",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "parakeet",
+      "batch_whisper_stt": "large-v3-turbo-q5_0"
+    },
+    {
+      "id": "vulkan-8",
+      "gpu": "vulkan",
+      "min_ram_gb": 8,
+      "summary_llm": "qwen3.5:4b",
+      "whisper_stt": "large-v3-turbo-q5_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3-q5_0"
+    },
+    {
+      "id": "vulkan-16",
+      "gpu": "vulkan",
+      "min_ram_gb": 16,
+      "summary_llm": "qwen3.5:9b",
+      "whisper_stt": "large-v3-turbo-q8_0",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3-q5_0"
+    },
+    {
+      "id": "vulkan-32",
+      "gpu": "vulkan",
+      "min_ram_gb": 32,
+      "summary_llm": "gemma4:12b",
+      "whisper_stt": "large-v3-turbo",
+      "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
+      "live_stt": "whisper",
+      "batch_whisper_stt": "large-v3"
+    }
+  ]
 }
