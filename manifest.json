@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updated_at": "2026-10-01T15:48:23Z",
+  "version": 10,
+  "updated_at": "2026-10-02T21:27:50Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
   "models": [
     {
@@ -15,7 +15,7 @@
         "ram_gb": 2,
         "disk_mb": 1019
       },
-      "replaced_by": null,
+      "replaced_by": "qwen3.5:2b",
       "description": "Fastest model. Runs on any hardware with ~1GB RAM. Good for quick summaries. Legacy model kept for existing installs. New setups use Qwen 3.5 2B.",
       "summary_llm": {
         "gguf_file": "gemma-3-1b-it-Q8_0.gguf",
@@ -44,7 +44,7 @@
         "ram_gb": 4,
         "disk_mb": 2374
       },
-      "replaced_by": null,
+      "replaced_by": "qwen3.5:4b",
       "description": "Balanced model. Great quality/speed trade-off. Requires ~3.5GB RAM. Legacy model kept for existing installs. New setups use Qwen 3.5 4B.",
       "summary_llm": {
         "gguf_file": "gemma-3-4b-it-Q4_K_M.gguf",
@@ -73,7 +73,7 @@
         "ram_gb": 10,
         "disk_mb": 6962
       },
-      "replaced_by": null,
+      "replaced_by": "gemma4:12b",
       "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+. Legacy model kept for existing installs. New setups use Gemma 4 12B.",
       "summary_llm": {
         "gguf_file": "gemma-3-12b-it-Q4_K_M.gguf",
@@ -744,7 +744,7 @@
   },
   "ffmpeg": {
     "windows_x86_64": {
-      "url": "https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-9.0.1-essentials_build.zip",
+      "url": "https://github.com/PineIT-ca/pineseed-download-assets/releases/download/ffmpeg-9.0.1/ffmpeg-9.0.1-essentials_build.zip",
       "sha256": "fec81ae03971d9dd4be3ebe02e263bd2ec1d789483f931bdba5f5715e65da2e9",
       "binary_sha256": "72a489eccd008c2ec2c0a5856c5c75bc3d8bbfa90166c4566865c246445e6aa3"
     },
@@ -771,17 +771,17 @@
   },
   "tier_packages": {
     "fast": {
-      "summary_llm": "gemma3:1b",
+      "summary_llm": "qwen3.5:2b",
       "whisper_stt": "base-q5_1",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     },
     "balanced": {
-      "summary_llm": "gemma3:4b",
+      "summary_llm": "qwen3.5:4b",
       "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     },
     "premium": {
-      "summary_llm": "gemma3:12b",
+      "summary_llm": "gemma4:12b",
       "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     }
