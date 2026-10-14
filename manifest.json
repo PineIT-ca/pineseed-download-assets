@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updated_at": "2026-10-02T21:27:50Z",
+  "version": 11,
+  "updated_at": "2026-10-14T14:36:49Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
   "models": [
     {
@@ -574,9 +574,9 @@
       "name": "small-tdrz",
       "display_name": "Whisper Small Tinydiarize",
       "model_type": "whisper_stt",
-      "download_url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en-tdrz.bin",
+      "download_url": "https://huggingface.co/akashmjn/tinydiarize-whisper.cpp/resolve/main/ggml-small.en-tdrz.bin",
       "file_size_mb": 466,
-      "sha256": null,
+      "sha256": "ceac3ec06d1d98ef71aec665283564631055fd6129b79d8e1be4f9cc33cc54b4",
       "quality_tier": "balanced",
       "hardware_requirements": {
         "ram_gb": 2,
@@ -1318,7 +1318,7 @@
       "id": "metal-16",
       "gpu": "metal",
       "min_ram_gb": 16,
-      "summary_llm": "gemma4:12b",
+      "summary_llm": "gemma4:e4b",
       "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
       "live_stt": "whisper",
