@@ -1,6 +1,6 @@
 {
-  "version": 11,
-  "updated_at": "2026-10-14T14:36:49Z",
+  "version": 12,
+  "updated_at": "2026-10-16T22:09:12Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
   "models": [
     {
@@ -74,7 +74,7 @@
         "disk_mb": 6962
       },
       "replaced_by": "gemma4:12b",
-      "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+. Legacy model kept for existing installs. New setups use Gemma 4 12B.",
+      "description": "Highest-quality summaries. Requires ~10GB RAM. Recommended for M-series Macs with 16GB+. Legacy model kept for existing installs. New setups use Gemma 4.",
       "summary_llm": {
         "gguf_file": "gemma-3-12b-it-Q4_K_M.gguf",
         "template": "gemma3",
@@ -781,7 +781,7 @@
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     },
     "premium": {
-      "summary_llm": "gemma4:12b",
+      "summary_llm": "gemma4:e4b",
       "whisper_stt": "large-v3-turbo-q5_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8"
     }
@@ -1388,7 +1388,7 @@
       "id": "vulkan-32",
       "gpu": "vulkan",
       "min_ram_gb": 32,
-      "summary_llm": "gemma4:12b",
+      "summary_llm": "gemma4:e4b",
       "whisper_stt": "large-v3-turbo",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
       "live_stt": "whisper",
