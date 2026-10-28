@@ -1,7 +1,35 @@
 {
-  "version": 12,
-  "updated_at": "2026-10-16T22:09:12Z",
+  "version": 14,
+  "updated_at": "2026-10-28T21:48:43Z",
   "remote_url": "https://raw.githubusercontent.com/PineIT-ca/pineseed-download-assets/main/manifest.json",
+  "embedding_models": [
+    {
+      "name": "embeddinggemma-2:q8_0",
+      "display_name": "EmbeddingGemma 2 (Q8_0)",
+      "model_type": "embedding",
+      "download_url": "https://huggingface.co/ggml-org/embeddinggemma-2-GGUF/resolve/bfcd298762cc34d0357ece5ebdd31791a3a374d8/embeddinggemma-2-Q8_0.gguf",
+      "file_size_mb": 295,
+      "sha256": "2188ac1deca4b77dffefd603c2776a9d76d9d74ec01841392982ebb840b09135",
+      "quality_tier": "balanced",
+      "hardware_requirements": {
+        "ram_gb": 1,
+        "disk_mb": 295
+      },
+      "replaced_by": null,
+      "description": "Local text embedder for semantic search. Text only, runs on this device. Apache 2.0.",
+      "min_app_version": "0.35.0",
+      "embedding": {
+        "gguf_file": "embeddinggemma-2-Q8_0.gguf",
+        "output_dim": 768,
+        "stored_dim": 256,
+        "pooling": "mean",
+        "max_input_tokens": 1024,
+        "query_prompt_search": "task: search result | query: {query}",
+        "query_prompt_qa": "task: question answering | query: {question}",
+        "document_prompt": "title: {title} | text: {content}"
+      }
+    }
+  ],
   "models": [
     {
       "name": "gemma3:1b",
@@ -1378,7 +1406,7 @@
       "id": "vulkan-16",
       "gpu": "vulkan",
       "min_ram_gb": 16,
-      "summary_llm": "qwen3.5:9b",
+      "summary_llm": "gemma4:e4b",
       "whisper_stt": "large-v3-turbo-q8_0",
       "parakeet_stt": "parakeet-tdt-0.6b-v3-int8",
       "live_stt": "whisper",
